@@ -3,9 +3,15 @@
     "name": "rentalx",
     "slug": "rentalx",
     "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "bundleIdentifier": "com.rentalx",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.rentalx",
+      "versionCode": 1
+    }
   },
   "name": "rentalx"
 }
