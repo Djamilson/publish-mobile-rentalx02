@@ -178,7 +178,7 @@ android {
 
         //key release
         releaseStaging{
-          resValue "string", "CodePushDeploymentKey", '"n--7RSdOW5E82jscz90ALsBZ8ALyepTIjBwI8"'
+          resValue "String", "CodePushDeploymentKey", '"n--7RSdOW5E82jscz90ALsBZ8ALyepTIjBwI8"'
           matchingFallbacks = ['release']
         }
 
@@ -189,7 +189,7 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
 
             //key de production
-            resValue "string", "CodePushDeploymentKey", '"0a-ubRZpLNq7zd3FdLv9maaFBASD4FSojyCjI"'
+            resValue "String", "CodePushDeploymentKey", '"0a-ubRZpLNq7zd3FdLv9maaFBASD4FSojyCjI"'
         }
     }
 
