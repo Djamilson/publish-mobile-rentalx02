@@ -179,7 +179,7 @@ android {
         //key release
         releaseStaging{
           resValue "String", "CodePushDeploymentKey", '"n--7RSdOW5E82jscz90ALsBZ8ALyepTIjBwI8"'
-          matchingFallbacks = ['release']
+           matchingFallbacks = ['debug', 'release']
         }
 
 
@@ -211,7 +211,9 @@ android {
 
 dependencies {
 
-    implementation project(':react-native-code-push')
+  compile project(':react-native-code-push')
+
+    //implementation project(':react-native-code-push')
 
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
