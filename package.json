@@ -5,7 +5,9 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "web": "expo start --web",
-    "start": "react-native start"
+    "start": "react-native start",
+    "codepush:ios": "appcenter codepush release-react -a Karan-Pratap-Singh/CodePushDemo -d Staging",
+    "codepush:android": "appcenter codepush release-react -a Karan-Pratap-Singh/CodePushDemo-Android -d Staging"
   },
   "dependencies": {
     "@expo-google-fonts/archivo": "^0.2.0",
