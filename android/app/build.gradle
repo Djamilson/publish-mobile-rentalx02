@@ -83,6 +83,9 @@ project.ext.react = [
 
 apply from: '../../node_modules/react-native-unimodules/gradle.groovy'
 apply from: "../../node_modules/react-native/react.gradle"
+
+apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
+
 apply from: "../../node_modules/expo-constants/scripts/get-app-config-android.gradle"
 apply from: "../../node_modules/expo-updates/scripts/create-manifest-android.gradle"
 
@@ -170,11 +173,23 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            buildConfigField "String", "CODEPUSH_KEY", '""'
         }
+
+        //key release
+        releaseStaging{
+          resValue "string", "CodePushDeploymentKey", '"LlHqjojog_5ii6iHNKDlezT6jvYinC_DHgiUw"'
+          matchingFallbacks = ['release']
+        }
+
+
         release {
             //signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+
+            //key de production
+            resValue "string", "CodePushDeploymentKey", '"3v_MxgejmINKhWVblBwry2NAQEwVBnyeo8_R5"'
         }
     }
 
@@ -195,6 +210,9 @@ android {
 }
 
 dependencies {
+
+    implementation project(':react-native-code-push')
+
     implementation fileTree(dir: "libs", include: ["*.jar"])
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
