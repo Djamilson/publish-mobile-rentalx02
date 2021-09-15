@@ -41,10 +41,20 @@ public class MainApplication extends Application implements ReactApplication {
       return BuildConfig.DEBUG;
     }
 
+    //add
+    @Override
+    protected String getJSBundleFile() {
+      return CodePush.getJSBundleFile();
+    }
+
     @Override
     protected List<ReactPackage> getPackages() {
       List<ReactPackage> packages = new PackageList(this).getPackages();
       packages.add(new ModuleRegistryAdapter(mModuleRegistryProvider));
+
+      //add
+      packages.add(new CodePush(BuildConfig.CODEPUSH_KEY, getApplicationContext(), BuildConfig.DEBUG, BuildConfig.CODEPUSH_KEY));
+
       return packages;
     }
 
@@ -58,14 +68,14 @@ public class MainApplication extends Application implements ReactApplication {
       return new ReanimatedJSIModulePackage();
     }
 
-    @Override
+    /*@Override
     protected @Nullable String getJSBundleFile() {
       if (BuildConfig.DEBUG) {
         return super.getJSBundleFile();
       } else {
         return UpdatesController.getInstance().getLaunchAssetFile();
       }
-    }
+    }*/
 
     @Override
     protected @Nullable String getBundleAssetName() {

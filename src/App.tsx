@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { LogBox, StatusBar } from 'react-native';
 import AppLoading from 'expo-app-loading';
-//import codePush from 'react-native-code-push';
+import codePush from 'react-native-code-push';
 
 import 'intl';
 import 'intl/locale-data/jsonp/pt-BR';
@@ -29,7 +29,7 @@ LogBox.ignoreLogs([
   'VirtualizedLists should never be nested',
   'Possible Unhandled Promise Rejection',
 ]);
-/*
+
 let codePushOptions = {
   checkFrequency: codePush?.CheckFrequency.ON_APP_RESUME,
   installMode: codePush?.InstallMode.IMMEDIATE,
@@ -44,7 +44,7 @@ async function myCodePush() {
     { installMode: codePush.InstallMode.IMMEDIATE },
     syncWithCodePush,
   );
-}*/
+}
 
 function App() {
   const [fontsLoaded] = useFonts({
@@ -56,7 +56,7 @@ function App() {
   });
 
   if (!fontsLoaded) {
-    //myCodePush();
+    myCodePush();
 
     return <AppLoading />;
   }
@@ -81,8 +81,8 @@ function App() {
   );
 }
 
-//export default __DEV__ ? App : codePush(codePushOptions)(App);
+export default __DEV__ ? App : codePush(codePushOptions)(App);
 
 //export default codePush(codePushOptions)(App);
 
-export default App;
+//export default App;
