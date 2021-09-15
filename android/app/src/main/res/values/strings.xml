@@ -1,4 +1,3 @@
 <resources>
     <string name="app_name">rentalx</string>
-    <string moduleConfig="true" name="CodePushDeploymentKey">0a-ubRZpLNq7zd3FdLv9maaFBASD4FSojyCjI</string>
 </resources>
