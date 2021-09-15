@@ -53,7 +53,7 @@ public class MainApplication extends Application implements ReactApplication {
       packages.add(new ModuleRegistryAdapter(mModuleRegistryProvider));
 
       //add
-      packages.add(new CodePush('0a-ubRZpLNq7zd3FdLv9maaFBASD4FSojyCjI', getApplicationContext(), BuildConfig.DEBUG, '0a-ubRZpLNq7zd3FdLv9maaFBASD4FSojyCjI'));
+      packages.add(new CodePush(BuildConfig.CodePushDeploymentKey, getApplicationContext(), BuildConfig.DEBUG, BuildConfig.CodePushDeploymentKey));
 
       return packages;
     }
