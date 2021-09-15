@@ -189,7 +189,7 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
 
             //key de production
-            resValue "String", "CodePushDeploymentKey", '0a-ubRZpLNq7zd3FdLv9maaFBASD4FSojyCjI'
+            resValue "String", "CodePushDeploymentKey", '"0a-ubRZpLNq7zd3FdLv9maaFBASD4FSojyCjI"'
         }
     }
 
