@@ -53,7 +53,7 @@ public class MainApplication extends Application implements ReactApplication {
       packages.add(new ModuleRegistryAdapter(mModuleRegistryProvider));
 
       //add
-      packages.add(new CodePush(BuildConfig.CodePushDeploymentKey, getApplicationContext(), BuildConfig.DEBUG, BuildConfig.CodePushDeploymentKey));
+      //packages.add(new CodePush(BuildConfig.CodePushDeploymentKey, getApplicationContext(), BuildConfig.DEBUG, BuildConfig.CodePushDeploymentKey));
 
       return packages;
     }
@@ -94,6 +94,7 @@ public class MainApplication extends Application implements ReactApplication {
 
   @Override
   public void onCreate() {
+    //CodePush.setReactInstanceHolder(mReactNativeHost);
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
 
